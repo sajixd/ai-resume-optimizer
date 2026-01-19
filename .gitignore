@@ -1,0 +1,13 @@
+# Python virtual environment ko ignore karein
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+
+# Node modules ko ignore karein
+frontend/node_modules/
+frontend/dist/
+
+# SECRETS (Sabse zaroori!)
+backend/.env
+frontend/.env
+.env

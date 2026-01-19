@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+* {
+  @apply transition-colors duration-200;
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation-name: enter;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: enter 0.5s ease-out forwards;
+}
+
+.slide-in-from-bottom-4 {
+  transform: translateY(0.5rem);
+  animation: enter 0.5s ease-out forwards;
+}
+
+.slide-in-from-bottom-8 {
+  transform: translateY(1rem);
+  animation: enter 0.6s ease-out forwards;
+}
+
+.focus-ring:focus {
+  outline: 2px solid rgb(59 130 246 / 0.5);
+  outline-offset: 2px;
+}
+
+.card-base {
+  @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm;
+}
+
+.card-hover {
+  @apply hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md transition-all duration-200;
+}
+
+.section-divider {
+  @apply border-t border-slate-200 dark:border-slate-800 my-8;
+}
